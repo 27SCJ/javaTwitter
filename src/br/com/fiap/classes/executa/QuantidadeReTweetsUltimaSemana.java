@@ -67,7 +67,7 @@ public class QuantidadeReTweetsUltimaSemana implements TwitterExecuta{
 		FileWriter arquivo = new FileWriter(new File(thread.getName()+".txt"));
 		PrintWriter out = new PrintWriter(arquivo);
 		
-		StringBuffer valores = new StringBuffer("2. ");
+		StringBuffer valores = new StringBuffer("2. "); 
 		for(int i=1; i<=executa.size();i++)
 			valores.append(" "+i+"-"+executa.get(i));
 			
