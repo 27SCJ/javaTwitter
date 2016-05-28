@@ -69,7 +69,7 @@ public class QuantidadeTweetsUltimaSemana implements TwitterExecuta {
 		
 		StringBuffer valores = new StringBuffer("1. ");
 		for(int i=1; i<=executa.size();i++)
-			valores.append(" "+i+"/"+executa.get(i));
+			valores.append(" "+i+"-"+executa.get(i));
 			
 	    out.print(valores.toString());
 		out.close();

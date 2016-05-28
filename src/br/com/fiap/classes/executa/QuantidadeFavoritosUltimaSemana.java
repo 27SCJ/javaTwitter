@@ -66,9 +66,9 @@ public class QuantidadeFavoritosUltimaSemana implements TwitterExecuta {
 		FileWriter arquivo = new FileWriter(new File(thread.getName()+".txt"));
 		PrintWriter out = new PrintWriter(arquivo);
 		
-		StringBuffer valores = new StringBuffer("3.Dia(Qtd) ");
+		StringBuffer valores = new StringBuffer("3. ");
 		for(int i=1; i<=executa.size();i++)
-			valores.append(" "+i+"("+executa.get(i)+")");
+			valores.append(" "+i+"-"+executa.get(i));
 			
 	    out.print(valores.toString());
 		out.close();
