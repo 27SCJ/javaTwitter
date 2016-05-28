@@ -17,7 +17,6 @@ import twitter4j.TwitterException;
 
 public class QuantidadeReTweetsUltimaSemana implements TwitterExecuta{
 
-
 	@SuppressWarnings("static-access")
 	@Override
 	public void twitterExecuta(Twitter credenciais, String mensagem, Thread thread) throws TwitterException, Exception {
@@ -46,7 +45,7 @@ public class QuantidadeReTweetsUltimaSemana implements TwitterExecuta{
 				for (Status status : result.getTweets()) {
 					
 					numeroSolicitudesResult = result.getRateLimitStatus().getRemaining();
-					System.out.println(numeroSolicitudesResult + " - " + result.getTweets().size());
+					//System.out.println(numeroSolicitudesResult + " - " + result.getTweets().size());
 					
 					contador+= status.getRetweetCount();
 					

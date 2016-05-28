@@ -21,6 +21,7 @@ import twitter4j.TwitterException;
 
 public class OrdenarNomeAutor implements TwitterExecuta {
 
+	@SuppressWarnings("static-access")
 	@Override
 	public void twitterExecuta(Twitter credenciais, String mensagem, Thread thread) throws TwitterException, Exception {
 		List<TwitterClass> executa = new ArrayList<>();
@@ -38,7 +39,6 @@ public class OrdenarNomeAutor implements TwitterExecuta {
 			query.setSince(dataFormatadaDesde);
 			query.setUntil(dataFormatadaAte);
 			QueryResult result;
-			int contador=0;
 			
 			result = credenciais.search(query);
 			
@@ -47,9 +47,8 @@ public class OrdenarNomeAutor implements TwitterExecuta {
 				for (Status status : result.getTweets()) {
 					
 					numeroSolicitudesResult = result.getRateLimitStatus().getRemaining();
-					System.out.println(numeroSolicitudesResult + " - " + result.getTweets().size());
+					//System.out.println(numeroSolicitudesResult + " - " + result.getTweets().size());
 					
-					//TwitterClass twitterClass= new TwitterClass(status.getUser().getName(),status.getUser().getScreenName(),LocalDateTime.parse(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(status.getCreatedAt())) ,status.getText());
 					TwitterClass twitterClass= new TwitterClass(status.getUser().getName(),Instant.ofEpochMilli(status.getCreatedAt().getTime()).atZone(ZoneId.systemDefault()).toLocalDateTime() ,status.getText());
 					executa.add(twitterClass);
 					
@@ -60,7 +59,6 @@ public class OrdenarNomeAutor implements TwitterExecuta {
 						}
 					}
 					
-					//System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
 				}
 				result = credenciais.search(query);
 			}

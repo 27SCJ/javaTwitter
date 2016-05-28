@@ -45,7 +45,7 @@ public class QuantidadeFavoritosUltimaSemana implements TwitterExecuta {
 				for (Status status : result.getTweets()) {
 					
 					numeroSolicitudesResult = result.getRateLimitStatus().getRemaining();
-					System.out.println(numeroSolicitudesResult + " - " + result.getTweets().size());
+					//System.out.println(numeroSolicitudesResult + " - " + result.getTweets().size());
 					
 					contador+= status.getFavoriteCount();
 					

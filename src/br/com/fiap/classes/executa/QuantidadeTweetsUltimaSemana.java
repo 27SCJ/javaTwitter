@@ -46,7 +46,7 @@ public class QuantidadeTweetsUltimaSemana implements TwitterExecuta {
 				for (Status status : result.getTweets()) {
 					
 					numeroSolicitudesResult = result.getRateLimitStatus().getRemaining();
-					System.out.println(numeroSolicitudesResult + " - " + result.getTweets().size());
+					//System.out.println(numeroSolicitudesResult + " - " + result.getTweets().size());
 					
 					contador++;
 					
@@ -57,7 +57,6 @@ public class QuantidadeTweetsUltimaSemana implements TwitterExecuta {
 						}
 					}
 					
-					//System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
 				}
 				result = credenciais.search(query);
 			}

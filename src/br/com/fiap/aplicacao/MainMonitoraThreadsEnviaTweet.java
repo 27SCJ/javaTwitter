@@ -7,7 +7,6 @@ import java.util.List;
 import br.com.fiap.classes.executa.PublicarTwitter;
 import br.com.fiap.interfaces.TwitterExecuta;
 import twitter4j.Twitter;
-import twitter4j.TwitterException;
 
 public class MainMonitoraThreadsEnviaTweet extends Thread {
 
@@ -47,7 +46,6 @@ public class MainMonitoraThreadsEnviaTweet extends Thread {
 				}
 			}
 			
-			int validaEnviar2Tweets=0;
 			for(int i =0; i< threads.size(); i++){
 				FileReader fr = new FileReader(threads.get(i).getName()+".txt");
 				BufferedReader br = new BufferedReader(fr);
