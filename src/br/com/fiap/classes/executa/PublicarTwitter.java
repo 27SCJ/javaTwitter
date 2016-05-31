@@ -8,7 +8,7 @@ public class PublicarTwitter implements TwitterExecuta {
 
 	@Override
 	public void twitterExecuta(Twitter credenciais, String mensagem, Thread thread) throws TwitterException,Exception {
-		credenciais.updateStatus(mensagem + " @gustavo_polar");
+		credenciais.updateStatus(mensagem + " @michelpf" );
 	}
 
 }
