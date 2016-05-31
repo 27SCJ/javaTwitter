@@ -66,8 +66,20 @@ public class OrdenarData implements TwitterExecuta {
 		
 		FileWriter arquivo = new FileWriter(new File(thread.getName()+".txt"));
 		PrintWriter out = new PrintWriter(arquivo);
-		out.println("5.1 " +executa.get(0).getDataPublicacao());
-		out.print("5.2 " +executa.get(executa.size()-1).getDataPublicacao());
+		//out.println("5.1 " +executa.get(0).getDataPublicacao());
+		
+		DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm:ss a");
+		LocalDateTime data1 = executa.get(0).getDataPublicacao();
+		String datanova1 = data1.format(formatter1);		
+		out.println("5.1- " + datanova1);
+		
+		//out.print("5.2 " +executa.get(executa.size()-1).getDataPublicacao());
+		
+		DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("dd-MM-yyyy  hh:mm:ss a");
+		LocalDateTime data2 = executa.get(executa.size()-1).getDataPublicacao();
+		String datanova2 = data2.format(formatter2);		
+		out.println("5.2- " + datanova2);
+		
 		out.close();
 		arquivo.close();
 
